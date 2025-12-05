@@ -3,7 +3,7 @@ primary_region = "nrt"
 
 [env]
   PORT = "3000"
-  ALLOWED_ORIGINS = ""
+  ALLOWED_ORIGINS = "https://bun-chat.fly.dev"
   MAX_CLIENTS = "50"
   DB_PATH = "/data/app.db"
 
