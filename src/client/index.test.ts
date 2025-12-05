@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import { createApp } from "./index";
 import { ElementNode, TestDocument } from "../tests/dom";
-import type { ChatMessage } from "../db";
+import type { ChatMessage } from "../types";
 
 class FakeWebSocket extends EventTarget {
   readyState = 1;

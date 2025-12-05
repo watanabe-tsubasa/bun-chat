@@ -1,13 +1,7 @@
 import { mkdirSync } from "fs";
 import { dirname } from "path";
 import { Database } from "bun:sqlite";
-
-export type ChatMessage = {
-  id: number;
-  name: string;
-  message: string;
-  ts: number;
-};
+import type { ChatMessage } from "./types";
 
 const DEFAULT_DB_PATH = process.env.DB_PATH ?? "./data/app.db";
 let dbPath = DEFAULT_DB_PATH;

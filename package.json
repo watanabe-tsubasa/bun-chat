@@ -11,7 +11,7 @@
   },
   "scripts": {
     "typecheck": "bunx tsc --noEmit",
-    "build:client": "bun build src/client/index.ts --outdir static --public-path /static",
+    "build:client": "bun build src/client/index.tsx --outdir static --public-path /static",
     "start": "bun run build:client && bun run index.ts"
   }
 }

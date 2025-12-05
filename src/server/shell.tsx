@@ -4,10 +4,11 @@ type Page = "home" | "chat";
 
 const Shell = ({ page }: { page: Page }) => (
   <html>
-    <head>
-      <meta charSet="utf-8" />
-      <title>Bun Chat</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charSet="utf-8" />
+    <title>Bun Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="/static/style.css" />
     </head>
     <body>
       <div id="app" data-page={page}></div>

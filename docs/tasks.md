@@ -84,3 +84,16 @@
 - [x] Prevent input blur while typing (name and chat fields).
 - [x] Enforce origin allowlist on API/WS requests.
 - [x] Fix message history fetch/display regression.
+
+## 9. refactor2
+
+- [x] convert h function style to .tsx files components
+- [x] divide pages and components
+
+## 10. UI improvement
+
+- [x] Polish overall UI to feel modern and visually appealing
+- [x] Fix chat layout: keep header and message input bar(composer) sticky at the top, and make the message list scrollable when it exceeds the remaining viewport area
+- [x] Extract global/chat styles into a shared CSS file
+
+## 11. deployment
