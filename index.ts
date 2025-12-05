@@ -8,6 +8,7 @@ type WsClient = ServerWebSocket<WsData>;
 
 const PORT = Number(process.env.PORT ?? 3000);
 const clients = new Set<WsClient>();
+const activeNames = new Set<string>();
 const MAX_CLIENTS = Number(process.env.MAX_CLIENTS ?? 50);
 
 const htmlHeaders = { "Content-Type": "text/html; charset=utf-8" };
@@ -130,6 +131,10 @@ Bun.serve<WsData>({
       broadcastPresence(clients);
     },
     close(ws: WsClient) {
+      const name = ws.data.name;
+      if (name) {
+        activeNames.delete(name);
+      }
       clients.delete(ws);
       broadcastPresence(clients);
     },
@@ -143,6 +148,12 @@ Bun.serve<WsData>({
       if (parsed?.type === "join") {
         const name = sanitizeText(parsed?.name);
         if (name) {
+          if (activeNames.has(name)) {
+            ws.send(JSON.stringify({ type: "error", reason: "name_taken" }));
+            ws.close(1008, "Name already in use");
+            return;
+          }
+          activeNames.add(name);
           ws.data.name = name;
           broadcastPresence(clients);
         }

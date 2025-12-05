@@ -61,6 +61,11 @@ export default function ChatApp({
         if (data.type === "chat") {
           setMessages((prev) => [data.payload, ...prev].slice(0, 20));
         }
+        if (data.type === "error" && data.reason === "name_taken") {
+          alert("同じ名前の人がいますので、名前を変更してください。");
+          $localStorage.removeItem("chat_name");
+          window.location.href = "/";
+        }
       } catch {
         /* ignore */
       }
@@ -92,7 +97,20 @@ export default function ChatApp({
     <main className="chat-shell">
       <header className="chat-header">
         <h1 className="chat-header-title">Chat Room</h1>
-        <p className="muted" style="margin:4px 0 0;">Signed in as {username || "guest"}</p>
+        <div style="display:flex; align-items:center; justify-content: space-between; gap: 12px;">
+          <p className="muted" style="margin:4px 0 0;">Signed in as {username || "guest"}</p>
+          <button
+            className="button chat-exit"
+            type="button"
+            onClick={() => {
+              $localStorage.removeItem("chat_name");
+              wsRef.current?.close();
+              window.location.href = "/";
+            }}
+          >
+            Exit
+          </button>
+        </div>
       </header>
       <section className="chat-body">
         <ul className="chat-list">

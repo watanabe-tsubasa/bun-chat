@@ -155,3 +155,8 @@ a {
   font-size: 12px;
   color: var(--muted);
 }
+.chat-exit {
+  background: #ff8a8a;
+  color: #1f0a0a;
+  box-shadow: 0 8px 24px rgba(255, 138, 138, 0.35);
+}

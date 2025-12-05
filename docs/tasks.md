@@ -96,4 +96,8 @@
 - [x] Fix chat layout: keep header and message input bar(composer) sticky at the top, and make the message list scrollable when it exceeds the remaining viewport area
 - [x] Extract global/chat styles into a shared CSS file
 
-## 11. deployment
+## 11. additional requirements
+- [x] Reject duplicate usernames when joining the chat (active session name must be unique).
+- [x] Add a header exit button in chat to leave/redirect to home.
+
+## 11. additional requirements
