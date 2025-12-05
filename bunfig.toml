@@ -1,0 +1,5 @@
+[tsconfig]
+jsx = "react-jsx"
+jsxImportSource = "src/runtime"
+allowJs = false
+checkJs = false
