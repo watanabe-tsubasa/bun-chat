@@ -1,0 +1,7 @@
+.git
+node_modules
+data
+static/index.js
+.DS_Store
+bun.lockb
+.env
