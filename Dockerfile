@@ -3,6 +3,7 @@ FROM oven/bun:1.3
 WORKDIR /app
 
 COPY bun.lock* package.json tsconfig.json ./
+COPY index.ts ./
 COPY src ./src
 COPY static ./static
 COPY docs ./docs
