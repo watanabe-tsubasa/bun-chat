@@ -1,9 +1,6 @@
 app = "bun-chat-app"
 primary_region = "nrt"
 
-[build]
-  dockerfile = "./Dockerfile"
-
 [env]
   PORT = "3000"
   ALLOWED_ORIGINS = ""
